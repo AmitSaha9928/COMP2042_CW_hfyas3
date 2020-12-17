@@ -10,6 +10,7 @@ import javafx.scene.input.KeyEvent;
 
 
 public class Animal extends Actor {
+	
 	Image imgW1;
 	Image imgA1;
 	Image imgS1;
@@ -29,7 +30,10 @@ public class Animal extends Actor {
 	boolean waterDeath = false;
 	boolean stop = false;
 	boolean changeScore = false;
+	boolean loselives = true;
+	int lives = 2;
 	int carD = 0;
+	int dead;
 	double w = 800;
 	ArrayList<End> inter = new ArrayList<End>();
 	public Animal(String imageLink) {
@@ -51,44 +55,44 @@ public class Animal extends Actor {
 				}
 				else {
 				if (second) {
-					if (event.getCode() == KeyCode.W || event.getCode() == KeyCode.UP) {	  
+					if (event.getCode() == KeyCode.W) {	  
 		                move(0, -movement);
 		                changeScore = false;
 		                setImage(imgW1);
 		                second = false;
 		            }
-		            else if (event.getCode() == KeyCode.A || event.getCode() == KeyCode.LEFT) {	            	
+		            else if (event.getCode() == KeyCode.A) {	            	
 		            	 move(-movementX, 0);
 		            	 setImage(imgA1);
 		            	 second = false;
 		            }
-		            else if (event.getCode() == KeyCode.S || event.getCode() == KeyCode.DOWN) {	            	
+		            else if (event.getCode() == KeyCode.S) {	            	
 		            	 move(0, movement);
 		            	 setImage(imgS1);
 		            	 second = false;
 		            }
-		            else if (event.getCode() == KeyCode.D || event.getCode() == KeyCode.RIGHT) {	            	
+		            else if (event.getCode() == KeyCode.D) {	            	
 		            	 move(movementX, 0);
 		            	 setImage(imgD1);
 		            	 second = false;
 		            }
 				}
-				else if (event.getCode() == KeyCode.W || event.getCode() == KeyCode.UP) {	            	
+				else if (event.getCode() == KeyCode.W) {	            	
 	                move(0, -movement);
 	                setImage(imgW2);
 	                second = true;
 	            }
-	            else if (event.getCode() == KeyCode.A || event.getCode() == KeyCode.LEFT) {	            	
+	            else if (event.getCode() == KeyCode.A) {	            	
 	            	 move(-movementX, 0);
 	            	 setImage(imgA2);
 	            	 second = true;
 	            }
-	            else if (event.getCode() == KeyCode.S || event.getCode() == KeyCode.DOWN) {	            	
+	            else if (event.getCode() == KeyCode.S) {	            	
 	            	 move(0, movement);
 	            	 setImage(imgS2);
 	            	 second = true;
 	            }
-	            else if (event.getCode() == KeyCode.D || event.getCode() == KeyCode.RIGHT) {	            	
+	            else if (event.getCode() == KeyCode.D) {	            	
 	            	 move(movementX, 0);
 	            	 setImage(imgD2);
 	            	 second = true;
@@ -100,7 +104,7 @@ public class Animal extends Actor {
 			public void handle(KeyEvent event) {
 				if (noMove) {}
 				else {
-				if (event.getCode() == KeyCode.W || event.getCode() == KeyCode.UP) {	  
+				if (event.getCode() == KeyCode.W) {	  
 					if (getY() < w) {
 						changeScore = true;
 						w = getY();
@@ -110,17 +114,17 @@ public class Animal extends Actor {
 	                setImage(imgW1);
 	                second = false;
 	            }
-	            else if (event.getCode() == KeyCode.A || event.getCode() == KeyCode.LEFT) {	            	
+	            else if (event.getCode() == KeyCode.A) {	            	
 	            	 move(-movementX, 0);
 	            	 setImage(imgA1);
 	            	 second = false;
 	            }
-	            else if (event.getCode() == KeyCode.S || event.getCode() == KeyCode.DOWN) {	            	
+	            else if (event.getCode() == KeyCode.S) {	            	
 	            	 move(0, movement);
 	            	 setImage(imgS1);
 	            	 second = false;
 	            }
-	            else if (event.getCode() == KeyCode.D || event.getCode() == KeyCode.RIGHT) {	            	
+	            else if (event.getCode() == KeyCode.D) {	            	
 	            	 move(movementX, 0);
 	            	 setImage(imgD1);
 	            	 second = false;
@@ -144,9 +148,13 @@ public class Animal extends Actor {
 		if (carDeath) {
 			noMove = true;
 			if ((now)% 11 ==0) {
+				
+				/*for(carD=1; carD<5; carD++) {
+					setImage(new Image("file:src/p4_group_8_repo/imG/cardeath"+carD+".png", imgSize, imgSize, true, true));
+				}*/
 				carD++;
 			}
-			if (carD==1) {
+			if (carD==1) { 
 				setImage(new Image("file:src/p4_group_8_repo/img/cardeath1.png", imgSize, imgSize, true, true));
 			}
 			if (carD==2) {
@@ -160,6 +168,7 @@ public class Animal extends Actor {
 				setY(679.8+movement);
 				carDeath = false;
 				carD = 0;
+				loselives = true;
 				setImage(new Image("file:src/p4_group_8_repo/img/froggerUp.png", imgSize, imgSize, true, true));
 				noMove = false;
 				if (points>50) {
@@ -172,6 +181,9 @@ public class Animal extends Actor {
 		if (waterDeath) {
 			noMove = true;
 			if ((now)% 11 ==0) {
+				/*for(carD=1; carD<5; carD++) {
+					setImage(new Image("file:src/p4_group_8_repo/img/cardeath"+carD+".png", imgSize, imgSize, true, true));
+				}*/
 				carD++;
 			}
 			if (carD==1) {
@@ -191,7 +203,8 @@ public class Animal extends Actor {
 				setY(679.8+movement);
 				waterDeath = false;
 				carD = 0;
-				setImage(new Image("file:src/p4_group_8_repo/img/froggerUp.png", imgSize, imgSize, true, true));
+				loselives = true;
+				setImage(new Image("file:src/p4_group_8_repo/froggerUp.png", imgSize, imgSize, true, true));
 				noMove = false;
 				if (points>50) {
 					points-=50;
@@ -231,6 +244,7 @@ public class Animal extends Actor {
 			if (getIntersectingObjects(End.class).get(0).isActivated()) {
 				end--;
 				points-=50;
+				loselives = true;
 			}
 			points+=50;
 			changeScore = true;
@@ -254,6 +268,19 @@ public class Animal extends Actor {
 		return points;
 	}
 	
+	public int getlives() {
+		return lives;
+	}
+	
+	public boolean loselives() {
+		if(loselives) {
+			lives--;
+			loselives = false;
+			return true;
+		}
+		return false;
+	}
+	
 	public boolean changeScore() {
 		if (changeScore) {
 			changeScore = false;
@@ -263,5 +290,5 @@ public class Animal extends Actor {
 		
 	}
 	
-
-}
+	
+	}
