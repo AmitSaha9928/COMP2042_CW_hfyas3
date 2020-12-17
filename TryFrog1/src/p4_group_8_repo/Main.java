@@ -116,7 +116,7 @@ public class Main extends Application {
 						background.add(new Obstacle("file:src/p4_group_8_repo/img/car1Left.png", 400, 597, -1, 50, 50));
 						background.add(new Obstacle("file:src/p4_group_8_repo/img/car1Left.png", 550, 597, -1, 50, 50));
 						background.add(new Obstacle("file:src/p4_group_8_repo/img/truck2Right.png", 0, 540, 1, 200, 200));
-						background.add(new Obstacle("file:src/img/p4_group_8_repo/truck2Right.png", 500, 540, 1, 200, 200));
+						background.add(new Obstacle("file:src/p4_group_8_repo/img/truck2Right.png", 500, 540, 1, 200, 200));
 						background.add(new Obstacle("file:src/p4_group_8_repo/img/car1Left.png", 500, 490, -5, 50, 50));
 						background.add(new Digit(0, 30, 440, 20));
 						//background.add(obstacle);
@@ -155,7 +155,7 @@ public class Main extends Application {
             		background.stop();
             		Alert alert = new Alert(AlertType.INFORMATION);
             		alert.setTitle("You Have Won The Game!");
-            		alert.setHeaderText("Your Score is "+animal.getPoints()+"!\nPrevious Highscore was"+score);
+            		alert.setHeaderText("Your Score is "+animal.getPoints()+"!\nPrevious Highest Score is "+score);
             		alert.setContentText("Highest Possible Score: 800");
             		alert.show();
             	}
