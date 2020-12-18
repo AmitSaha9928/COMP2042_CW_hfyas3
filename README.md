@@ -11,6 +11,7 @@ This is the README file for the coursework for COMP2042. The coursework involves
 ## Extentions
 1. A Main Menu page has been added which will be displayed at the start of the program from which the user can either press spacebar or h. Pressing the spacebar triggers the game to start while pressing h triggers the help screen which tells the user about how to play the game and its controls.
 2. A High Score pop up has been added which shows the current score after finishing the level and also shows the all time high score. The all time high score is stored in scores.dat file.
+3. A lives counter has also been added to keep track of how many times the player has died. The player has been given 3 lives by default.  
 
 ## Bug Fix
 1. The background image path has been fixed. Now the background shows up correctly
