@@ -60,6 +60,7 @@ public class Main extends Application {
 */
 		main_scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
+				
 				if(event.getCode() == KeyCode.SPACE) {
 /**
 *  Start
@@ -211,7 +212,7 @@ public class Main extends Application {
  */
     public void writeScore(int newHiScore) throws IOException {
 
-        File output = new File( "src/p4_group_8_repo/img/scores.dat");
+        File output = new File( "src/p4_group_8_repo/Data/scores.dat");
         FileWriter writer = new FileWriter(output);
         PrintWriter printWriter = new PrintWriter(writer);
 
@@ -226,7 +227,7 @@ public int currentHighscore() {
         BufferedReader reader = null;
         try
         {
-            readFile = new FileReader( "src/p4_group_8_repo/img/scores.dat");
+            readFile = new FileReader( "src/p4_group_8_repo/Data/scores.dat");
             reader = new BufferedReader(readFile);
             return Integer.parseInt(reader.readLine());
         }
