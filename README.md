@@ -11,3 +11,13 @@ This is the README file for the coursework for COMP2042. The coursework involves
 # Extentions
 1. A Main Menu page has been added which will be displayed at the start of the program from which the user can either press spacebar or h. Pressing the spacebar triggers the game to start while pressing h triggers the help screen which tells the user about how to play the game and its controls.
 2. A High Score pop up has been added which shows the current score after finishing the level and also shows the all time high score. The all time high score is stored in scores.dat file.
+
+# Bug Fix
+1. The background image path has been fixed. Now the background shows up correctly
+2. The score was at an awkward position which blocked a bit of the "r" from ther frogger logo on the top
+
+# Screenshot of Game
+1. Main Menu
+2. Game Screen
+3. High Score Popup
+
