@@ -174,6 +174,10 @@ public class Main extends Application {
             		alert.setContentText("Highest Possible Score: 800");
             		alert.show();
             	}
+            	if(animal.loselives()) {
+            		Lives(animal.getlives());
+            	}
+            		
 
             }
         };
@@ -186,7 +190,26 @@ public class Main extends Application {
     	createTimer();
         timer.start();
     }
-	
+	public void Lives (int n) {
+		background.add(new Lives(n));
+		if (n==0) {
+			stop();
+			if (animal.getPoints() > score) {
+				try {
+					writeScore(animal.getPoints());
+				} catch (IOException e) {
+					 e.printStackTrace();
+				}
+				
+			}
+			background.stop();
+    		Alert alert = new Alert(AlertType.INFORMATION);
+    		alert.setTitle("You Have Won The Game!");
+    		alert.setHeaderText("Your Score is "+animal.getPoints()+"!\nPrevious Highest Score is "+score);
+    		alert.setContentText("Highest Possible Score: 800");
+    		alert.show();
+		}
+	}
 /**
 * game end
 */
@@ -230,7 +253,7 @@ public int currentHighscore() {
             readFile = new FileReader( "src/p4_group_8_repo/Data/scores.dat");
             reader = new BufferedReader(readFile);
             return Integer.parseInt(reader.readLine());
-        }
+        } 
         catch (Exception e)
         {
             return 0;
