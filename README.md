@@ -17,7 +17,15 @@ This is the README file for the coursework for COMP2042. The coursework involves
 2. The score was at an awkward position which blocked a bit of the "r" from ther frogger logo on the top
 
 # Screenshot of Game
-1. Main Menu
-2. Game Screen
-3. High Score Popup
+Main Menu
+
+![Capture](https://user-images.githubusercontent.com/65004568/102628135-74b51100-4173-11eb-9643-d5d44661fbe7.PNG)
+
+Game Screen
+
+![Capture2](https://user-images.githubusercontent.com/65004568/102628280-a1692880-4173-11eb-87af-ce45c9d67f9d.PNG)
+
+High Score Popup
+
+![Capture3](https://user-images.githubusercontent.com/65004568/102628464-eb520e80-4173-11eb-8ee5-fd32ac924014.PNG)
 
