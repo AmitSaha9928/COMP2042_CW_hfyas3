@@ -15,7 +15,11 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
-
+/**
+ * A class to handle the scenes
+ * @author Amit Saha
+ *
+ */
 public abstract class World extends Pane {
     private AnimationTimer timer;
     

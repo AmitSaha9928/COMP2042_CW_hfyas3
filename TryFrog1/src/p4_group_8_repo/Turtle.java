@@ -1,8 +1,12 @@
 package p4_group_8_repo;
 
 import javafx.scene.image.Image;
-
-public class Turtle extends Actor{
+/**
+ * A base class for defining turtle obstacle parameters 
+ * @author Amit Saha
+ *
+ */
+public class Turtle extends Actor{	
 	Image turtle1;
 	Image turtle2;
 	Image turtle3;
@@ -31,6 +35,9 @@ public class Turtle extends Actor{
 		if (getX() < -75 && speed<0)
 			setX(600);
 	}
+/**
+ * defining the turtle state images (submerging into water)
+ */
 	public Turtle(int xpos, int ypos, int s, int w, int h) {
 		turtle1 = new Image("file:src/p4_group_8_repo/img/TurtleAnimation1.png", w, h, true, true);
 		turtle2 = new Image("file:src/p4_group_8_repo/img/TurtleAnimation2.png", w, h, true, true);

@@ -1,8 +1,15 @@
 package p4_group_8_repo;
 
 import javafx.scene.image.Image;
-
+/**
+ * A base class for defining car obstacle parameters 
+ * @author Amit Saha
+ *
+ */
 public class Obstacle extends Actor {
+/**
+ * setting obstacle speed	
+ */
 	private int speed;
 	@Override
 	public void act(long now) {

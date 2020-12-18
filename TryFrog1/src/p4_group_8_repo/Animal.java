@@ -8,9 +8,15 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
-
+/**
+ * A base class for animals
+ * @author Amit Saha
+ *
+ */
 public class Animal extends Actor {
-	
+/**
+ * Declaring the variables	
+ */
 	Image imgW1;
 	Image imgA1;
 	Image imgS1;
@@ -40,6 +46,9 @@ public class Animal extends Actor {
 		setImage(new Image(imageLink, imgSize, imgSize, true, true));
 		setX(300);
 		setY(679.8+movement);
+/**
+ * Declaring image paths
+ */
 		imgW1 = new Image("file:src/p4_group_8_repo/img/froggerUp.png", imgSize, imgSize, true, true);
 		imgA1 = new Image("file:src/p4_group_8_repo/img/froggerLeft.png", imgSize, imgSize, true, true);
 		imgS1 = new Image("file:src/p4_group_8_repo/img/froggerDown.png", imgSize, imgSize, true, true);
@@ -49,6 +58,10 @@ public class Animal extends Actor {
 		imgS2 = new Image("file:src/p4_group_8_repo/img/froggerDownJump.png", imgSize, imgSize, true, true);
 		imgD2 = new Image("file:src/p4_group_8_repo/img/froggerRightJump.png", imgSize, imgSize, true, true);
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
+/**
+ * Handles movement of the frog 
+ */
+			
 			public void handle(KeyEvent event){
 				if (noMove) {
 					
@@ -136,6 +149,9 @@ public class Animal extends Actor {
 	}
 	
 	@Override
+	/**
+	 * Declaring death animations and obstacle parameters
+	 */
 	public void act(long now) {
 		int bounds = 0;
 		if (getY()<0 || getY()>734) {
@@ -150,7 +166,7 @@ public class Animal extends Actor {
 			if ((now)% 11 ==0) {
 				
 				/*for(carD=1; carD<5; carD++) {
-					setImage(new Image("file:src/p4_group_8_repo/imG/cardeath"+carD+".png", imgSize, imgSize, true, true));
+					setImage(new Image("file:src/p4_group_8_repo/img/cardeath"+carD+".png", imgSize, imgSize, true, true));
 				}*/
 				carD++;
 			}
@@ -280,7 +296,10 @@ public class Animal extends Actor {
 		}
 		return false;
 	}
-	
+	/**
+	 * update score
+	 * @return the changed score
+	 */
 	public boolean changeScore() {
 		if (changeScore) {
 			changeScore = false;

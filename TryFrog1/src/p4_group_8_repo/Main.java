@@ -22,7 +22,11 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import p4_group_8_repo.Menu;
-
+/**
+ * Main class for frogger game
+ * @author Amit Saha
+ *
+ */
 public class Main extends Application {
 	AnimationTimer timer;
 	MyStage background;
@@ -35,30 +39,37 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		/* setting gameplay menu */
+/** 
+* setting gameplay menu
+*/
 		MyStage main_scene = new MyStage();
 		score = currentHighscore();
 		Scene mainscene = new Scene(main_scene,600, 800);
 		Menu mm = new Menu();
 		main_scene.add(mm);
 		
-		/*Display main menu*/
+/**
+* Display main menu
+*/
 		primaryStage.setScene(mainscene);
 		primaryStage.show();
 		primaryStage.setResizable(false);
 		
-		/*Spacebar to start game*/
+/**
+* Starting the game on pressing Spacebar
+*/
 		main_scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
 				if(event.getCode() == KeyCode.SPACE) {
-					/* Gme starts*/
+/**
+*  Start
+*/
 					 background = new MyStage();
 					    Scene scene  = new Scene(background,600,800);
 					    
-						//Obstacle obstacle = new Obstacle("file:src/img/truck1Right.png", 25, 25, 3);
-						//Obstacle obstacle1 = new Obstacle("file:src/img/truck2Right.png", 100, 100,2 );
-						//Obstacle obstacle2 = new Obstacle("file:src/img/truck1Right.png",0,  150, 1);
-
+/**
+ * adding necessary image paths and their parameters
+ */
 						BackgroundImage froggerback = new BackgroundImage("file:src/p4_group_8_repo/img/iKogsKW.png");
 					    
 						background.add(froggerback);
@@ -118,7 +129,7 @@ public class Main extends Application {
 						background.add(new Obstacle("file:src/p4_group_8_repo/img/truck2Right.png", 0, 540, 1, 200, 200));
 						background.add(new Obstacle("file:src/p4_group_8_repo/img/truck2Right.png", 500, 540, 1, 200, 200));
 						background.add(new Obstacle("file:src/p4_group_8_repo/img/car1Left.png", 500, 490, -5, 50, 50));
-						background.add(new Digit(0, 30, 440, 20));
+						background.add(new Digit(0, 30, 560, 20));
 						//background.add(obstacle);
 						//background.add(obstacle1);
 						//background.add(obstacle2);
@@ -163,27 +174,38 @@ public class Main extends Application {
             }
         };
     }
+/**
+ * game start
+ */
 	public void start() {
 		background.playMusic();
     	createTimer();
         timer.start();
     }
 	
-
+/**
+* game end
+*/
     public void stop() {
         timer.stop();
     }
-    
+/**
+ * score patameters    
+ * 
+ */
     public void setNumber(int n) {
     	int shift = 0;
     	while (n > 0) {
     		  int d = n / 10;
     		  int k = n - d * 10;
     		  n = d;
-    		  background.add(new Digit(k, 30, 360 - shift, 25));
+    		  background.add(new Digit(k, 30, 560 - shift, 25));
     		  shift+=30;
     		}
     }
+/**
+ * adding score file and its arguments
+ */
     public void writeScore(int newHiScore) throws IOException {
 
         File output = new File( "src/p4_group_8_repo/img/scores.dat");
@@ -193,6 +215,9 @@ public class Main extends Application {
         printWriter.printf("%d", newHiScore);
         printWriter.close();
     }
+/**
+ * current high score reading from file
+ */
 public int currentHighscore() { 
         FileReader readFile = null;
         BufferedReader reader = null;
