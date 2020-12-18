@@ -190,7 +190,7 @@ public class Main extends Application {
         timer.stop();
     }
 /**
- * score patameters    
+ * score parameters    
  * 
  */
     public void setNumber(int n) {
