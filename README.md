@@ -2,7 +2,7 @@
 ## Introduction
 This is the README file for the coursework for COMP2042. The coursework involves performing maintenance on the provided JavaFx project for the game, Frogger, as well as adding extensions to improve the game.
 
-##Requirements
+## Requirements
 Needs JavaFX installed and a compiler, for this project Eclipse was used.
 
 ## Installation
@@ -14,10 +14,10 @@ Needs JavaFX installed and a compiler, for this project Eclipse was used.
 6. Put in --module-path "C:\Users\lawkh\Downloads\javafx-sdk-11.0.2\lib" --add-modules=ALL-MODULE-PATH in VM arguments.
 7. Game is good to go.
 
-##Credits
+## Credits
 This game is improved and extended from https://github.com/hirish99/Frogger-Arcade-Game
 
-##License
+## License
 This Game is copyright Free
 
 ## Maintenence
