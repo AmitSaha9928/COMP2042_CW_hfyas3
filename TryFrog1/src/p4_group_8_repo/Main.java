@@ -65,7 +65,9 @@ public class Main extends Application {
 				if(event.getCode() == KeyCode.SPACE) {
 					main_scene.add(new Level());
 
-						
+/**
+ * getting input to continue to next screen						
+ */
 					}if (event.getCode() == KeyCode.H) {
                     main_scene.add(new Help(1000));
 				}
@@ -88,11 +90,13 @@ public class Main extends Application {
 		});	
 	}
 	
-
+/**
+ * actions
+ */
 	public void createTimer() {
         timer = new AnimationTimer() {
             @Override
-            public void handle(long now) {
+     public void handle(long now) {
             	if (animal.changeScore()) {
             		setNumber(animal.getPoints());
             	}
@@ -131,6 +135,9 @@ public class Main extends Application {
     	createTimer();
         timer.start();
     }
+/**
+ * Game Lives
+ */
 	public void Lives (int n) {
 		background.add(new Lives(n));
 		if (n==0) {
@@ -144,6 +151,9 @@ public class Main extends Application {
 				
 			}
 			background.stop();
+/**
+ * High score alert			
+ */
     		Alert alert = new Alert(AlertType.INFORMATION);
     		alert.setTitle("You Have Won The Game!");
     		alert.setHeaderText("Your Score is "+animal.getPoints()+"!\nPrevious Highest Score is "+score);
@@ -210,7 +220,9 @@ public int currentHighscore() {
             }
         }
     }  
-	
+/**
+ * water level	
+ */
 	public void Water() {
 		 background = new MyStage();
 		    
@@ -224,14 +236,14 @@ public int currentHighscore() {
 			background.add(new Log("file:src/p4_group_8_repo/img/log3.png", 150, 0, 166, 0.75));
 			background.add(new Log("file:src/p4_group_8_repo/img/log3.png", 150, 220, 166, 0.75));
 			background.add(new Log("file:src/p4_group_8_repo/img/log3.png", 150, 440, 166, 0.75));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log3.png", 150, 0, 166, 0.75));
+			
 			background.add(new Log("file:src/p4_group_8_repo/img/logs.png", 300, 0, 276, -2));
 			background.add(new Log("file:src/p4_group_8_repo/img/logs.png", 300, 400, 276, -2));
-			//background.add(new Log("file:src/img/logs.png", 300, 800, 276, -2));
+			
 			background.add(new Log("file:src/p4_group_8_repo/img/log3.png", 150, 50, 329, 0.75));
 			background.add(new Log("file:src/p4_group_8_repo/img/log3.png", 150, 270, 329, 0.75));
 			background.add(new Log("file:src/p4_group_8_repo/img/log3.png", 150, 490, 329, 0.75));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log3.png", 150, 570, 329, 0.75));
+			
 			
 			background.add(new Turtle(500, 376, -1, 130, 130));
 			background.add(new Turtle(300, 376, -1, 130, 130));
@@ -239,25 +251,7 @@ public int currentHighscore() {
 			background.add(new WetTurtle(600, 217, -1, 130, 130));
 			background.add(new WetTurtle(400, 217, -1, 130, 130));
 			background.add(new WetTurtle(200, 217, -1, 130, 130));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 200, 100, 1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 0, 100, 1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 100, 120, -1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 200, 120, -1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 100, 140, 1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 200, 140, 1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 100, 160, -1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 300, 160, -1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 100, 180, 1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 200, 180, 1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 100, 200, -1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 200, 200, -1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 100, 220, 1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 200, 220, 1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 400, 220, 1));
-			//End end2 = new End();
-			//End end3 = new End();
-			//End end4 = new End();
-			//End end5 = new End();
+			
 			background.add(new End(13,96));
 			background.add(new End(141,96));
 			background.add(new End(141 + 141-13,96));
@@ -268,23 +262,25 @@ public int currentHighscore() {
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/truck1Right.png", 0, 649, 1, 120, 120));
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/truck1Right.png", 300, 649, 1, 120, 120));
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/truck1Right.png", 600, 649, 1, 120, 120));
-			//background.add(new Obstacle("file:src/p4_group_8_repo/img/truck1"+"Right.png", 720, 649, 1, 120, 120));
+			
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/car1Left.png", 100, 597, -1, 50, 50));
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/car1Left.png", 250, 597, -1, 50, 50));
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/car1Left.png", 400, 597, -1, 50, 50));
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/car1Left.png", 550, 597, -1, 50, 50));
+			
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/truck2Right.png", 0, 540, 1, 200, 200));
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/truck2Right.png", 500, 540, 1, 200, 200));
+			
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/car1Left.png", 500, 490, -5, 50, 50));
 			background.add(new Digit(0, 30, 560, 20));
-			//background.add(obstacle);
-			//background.add(obstacle1);
-			//background.add(obstacle2);
+			
 			background.start();
 			start();  
 			
 		}
-		
+/**
+ * sky level		
+ */
 	public void Sky() {
 		 background = new MyStage();
 		    
@@ -313,25 +309,6 @@ public int currentHighscore() {
 			background.add(new Log("file:src/p4_group_8_repo/img/hero.png", 75, 440, 350, 2));
 			background.add(new Log("file:src/p4_group_8_repo/img/hero.png", 75, 376, 350, 2));
 		
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 200, 100, 1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 0, 100, 1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 100, 120, -1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 200, 120, -1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 100, 140, 1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 200, 140, 1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 100, 160, -1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 300, 160, -1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 100, 180, 1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 200, 180, 1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 100, 200, -1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 200, 200, -1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 100, 220, 1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 200, 220, 1));
-			//background.add(new Log("file:src/p4_group_8_repo/img/log2.png", 400, 220, 1));
-			//End end2 = new End();
-			//End end3 = new End();
-			//End end4 = new End();
-			//End end5 = new End();
 			background.add(new End(13,96));
 			background.add(new End(141,96));
 			background.add(new End(141 + 141-13,96));
@@ -342,7 +319,7 @@ public int currentHighscore() {
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/truck1Right.png", 0, 649, 1, 120, 120));
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/truck1Right.png", 300, 649, 1, 120, 120));
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/truck1Right.png", 600, 649, 1, 120, 120));
-			//background.add(new Obstacle("file:src/p4_group_8_repo/img/truck1"+"Right.png", 720, 649, 1, 120, 120));
+			
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/car1Left.png", 100, 597, -1, 50, 50));
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/car1Left.png", 250, 597, -1, 50, 50));
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/car1Left.png", 400, 597, -1, 50, 50));
@@ -351,11 +328,8 @@ public int currentHighscore() {
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/truck2Right.png", 500, 540, 1, 200, 200));
 			background.add(new Obstacle("file:src/p4_group_8_repo/img/car1Left.png", 500, 490, -5, 50, 50));
 			background.add(new Digit(0, 30, 560, 20));
-			//background.add(obstacle);
-			//background.add(obstacle1);
-			//background.add(obstacle2);
+			
 			background.start();
-
 			start();  
 			
 	

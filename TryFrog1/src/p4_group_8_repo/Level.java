@@ -18,10 +18,9 @@ public class Level extends Actor{
      * getting the score pictures for counting lives
      */
     public Level() {
-        level = new Image("file:src/p4_group_8_repo/img/froggermainmenu.png", 600,800, true, true);
+        level = new Image("file:src/p4_group_8_repo/img/froggermainmenu2.png", 600,800, true, true);
         setImage(level);
-        setX(560);
-        setY(55);
+       
 }
 
 }
