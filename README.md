@@ -18,13 +18,21 @@ This is the README file for the coursework for COMP2042. The coursework involves
 2. The score was at an awkward position which blocked a bit of the "r" from ther frogger logo on the top
 
 ## Screenshots of Game
-Main Menu
+Start Menu
 
-![Capture](https://user-images.githubusercontent.com/65004568/102628135-74b51100-4173-11eb-9643-d5d44661fbe7.PNG)
+![new](https://user-images.githubusercontent.com/65004568/102677966-76142700-41cf-11eb-975e-ca4e8ddbd289.PNG)
 
-Game Screen
+Selection Menu
+
+![new2](https://user-images.githubusercontent.com/65004568/102677983-8d531480-41cf-11eb-9f7a-8af84a05fc1c.PNG)
+
+Water Level
 
 ![Capture2](https://user-images.githubusercontent.com/65004568/102628280-a1692880-4173-11eb-87af-ce45c9d67f9d.PNG)
+
+Sky Level
+
+![new 3](https://user-images.githubusercontent.com/65004568/102677934-47964c00-41cf-11eb-92bc-14c916ed687f.PNG)
 
 High Score Popup
 
