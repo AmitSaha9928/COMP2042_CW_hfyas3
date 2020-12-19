@@ -6,8 +6,8 @@ import javafx.scene.image.Image;
  * @author Amit Saha
  *
  */
-public class Lives extends Actor{
-    Image lives;
+public class Level extends Actor{
+    Image level;
 
     @Override
     public void act(long now) {
@@ -17,9 +17,9 @@ public class Lives extends Actor{
     /**
      * getting the score pictures for counting lives
      */
-    public Lives(int n) {
-        lives = new Image("file:src/p4_group_8_repo/img/"+n+".png", 110, 30, true, true);
-        setImage(lives);
+    public Level() {
+        level = new Image("file:src/p4_group_8_repo/img/froggermainmenu.png", 600,800, true, true);
+        setImage(level);
         setX(560);
         setY(55);
 }
