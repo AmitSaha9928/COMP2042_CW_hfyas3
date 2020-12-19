@@ -9,9 +9,10 @@ This is the README file for the coursework for COMP2042. The coursework involves
 4. Performed bugfix on background image not showing.
 
 ## Extentions
-1. A Main Menu page has been added which will be displayed at the start of the program from which the user can either press spacebar or h. Pressing the spacebar triggers the game to start while pressing h triggers the help screen which tells the user about how to play the game and its controls.
+1. A Main Menu page has been added which will be displayed at the start of the program from which the user can press spacebar for going to the selection screen where the user can press h which triggers the help screen which tells the user about how to play the game and its controls, r for water level and t for water level
 2. A High Score pop up has been added which shows the current score after finishing the level and also shows the all time high score. The all time high score is stored in scores.dat file.
-3. A lives counter has also been added to keep track of how many times the player has died. The player has been given 3 lives by default.  
+3. A lives counter has also been added to keep track of how many times the player has died. The player has been given 3 lives by default. 
+4. A new Sky Level has been added with all new obstacles
 
 ## Bug Fix
 1. The background image path has been fixed. Now the background shows up correctly
