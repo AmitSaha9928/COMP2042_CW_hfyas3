@@ -14,6 +14,7 @@ import javafx.scene.input.KeyEvent;
  *
  */
 public class Animal extends Actor {
+	private static final Lives Lives = null;
 /**
  * Declaring the variables	
  */
@@ -37,7 +38,7 @@ public class Animal extends Actor {
 	boolean stop = false;
 	boolean changeScore = false;
 	boolean loselives = true;
-	int lives = 2;
+	int lives = 4;
 	int carD = 0;
 	int dead;
 	double w = 800;
