@@ -8,13 +8,17 @@ import javafx.scene.image.Image;
  */
 public class End extends Actor{
 	boolean activated = false;
+/**
+ * 	
+ */
 	@Override
 	public void act(long now) {
 	
 	}
 	/**
 	 * image for initial state
-	 * 
+	 * @param x
+	 * @param y
 	 */
 	public End(int x, int y) {
 		setX(x);
@@ -23,13 +27,15 @@ public class End extends Actor{
 	}
 	/**
 	 * image for final state
-	 * 
 	 */
 	public void setEnd() {
 		setImage(new Image("file:src/p4_group_8_repo/img/FrogEnd.png", 70, 70, true, true));
 		activated = true;
 	}
-	
+	/**
+	 * 
+	 * @return boolean
+	 */
 	public boolean isActivated() {
 		return activated;
 	}

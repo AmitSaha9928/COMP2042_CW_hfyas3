@@ -37,9 +37,12 @@ public class Main extends Application {
 	}
 
 	@Override
+/**
+ * start stage
+ */
 	public void start(Stage primaryStage) throws Exception {
 		
-/**
+/*
 * setting gameplay menu
 */
 		MyStage main_scene = new MyStage();
@@ -48,24 +51,26 @@ public class Main extends Application {
 		Menu mm = new Menu();
 		main_scene.add(mm);
 		
-/**
-* Display mainmenu
+/*
+* Display main menu
 */
 		primaryStage.setScene(mainscene);
 		primaryStage.show();
 		primaryStage.setResizable(false);
 		
-/**
+/*
 * Starting the game on pressing Spacebar
 */
 		main_scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
-			
+/**
+ * get input			
+ */
 			public void handle(KeyEvent event) {
 				
 				if(event.getCode() == KeyCode.SPACE) {
 					main_scene.add(new Level());
 
-/**
+/*
  * getting input to continue to next screen						
  */
 					}if (event.getCode() == KeyCode.H) {
@@ -91,11 +96,14 @@ public class Main extends Application {
 	}
 	
 /**
- * actions
+ * timer
  */
 	public void createTimer() {
         timer = new AnimationTimer() {
-            @Override
+/**
+ * score     
+ */
+        	@Override
      public void handle(long now) {
             	if (animal.changeScore()) {
             		setNumber(animal.getPoints());
@@ -136,7 +144,8 @@ public class Main extends Application {
         timer.start();
     }
 /**
- * Game Lives
+ * game lives
+ * @param n
  */
 	public void Lives (int n) {
 		background.add(new Lives(n));
@@ -169,7 +178,7 @@ public class Main extends Application {
     }
 /**
  * score parameters    
- * 
+ * @param n
  */
     public void setNumber(int n) {
     	int shift = 0;
@@ -183,6 +192,8 @@ public class Main extends Application {
     }
 /**
  * adding score file and its arguments
+ * @param newHiScore
+ * @throws IOException
  */
     public void writeScore(int newHiScore) throws IOException {
 
@@ -194,7 +205,8 @@ public class Main extends Application {
         printWriter.close();
     }
 /**
- * current high score reading from file
+ * adding score file and its arguments
+ * @return
  */
 public int currentHighscore() { 
         FileReader readFile = null;
@@ -226,7 +238,7 @@ public int currentHighscore() {
 	public void Water() {
 		 background = new MyStage();
 		    
-	/**
+	/*
 	* adding necessary image paths and their parameters
 	*/
 			BackgroundImage froggerback = new BackgroundImage("file:src/p4_group_8_repo/img/iKogsKW.png");
@@ -284,7 +296,7 @@ public int currentHighscore() {
 	public void Sky() {
 		 background = new MyStage();
 		    
-	/**
+	/*
 	* adding necessary image paths and their parameters
 	*/
 			BackgroundImage froggerback = new BackgroundImage("file:src/p4_group_8_repo/img/iKogsKW.png");

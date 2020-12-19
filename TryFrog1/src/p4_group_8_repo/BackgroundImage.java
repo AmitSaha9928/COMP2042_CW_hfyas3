@@ -8,13 +8,18 @@ import javafx.scene.image.Image;
  *
  */
 public class BackgroundImage extends Actor{
-
+/**
+ * act
+ */
 	@Override
 	public void act(long now) {
 		
 		
 	}
-	
+/**
+ * background image	
+ * @param imageLink
+ */
 	public BackgroundImage(String imageLink) {
 		setImage(new Image(imageLink, 600, 900, true, true));
 		

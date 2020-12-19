@@ -15,6 +15,9 @@ public class WetTurtle extends Actor{
 	int i = 1;
 	boolean bool = true;
 	boolean sunk = false;
+/**
+ * turtle
+ */
 	@Override
 	public void act(long now) {
 
@@ -43,6 +46,11 @@ public class WetTurtle extends Actor{
 	}
 	/**
 	 * defining the turtle state images (emerging from water)
+	 * @param xpos
+	 * @param ypos
+	 * @param s
+	 * @param w
+	 * @param h
 	 */
 	public WetTurtle(int xpos, int ypos, int s, int w, int h) {
 		turtle1 = new Image("file:src/p4_group_8_repo/img/TurtleAnimation1.png", w, h, true, true);
@@ -54,6 +62,10 @@ public class WetTurtle extends Actor{
 		speed = s;
 		setImage(turtle2);
 	}
+	/**
+	 * turtle under water
+	 * @return sunk
+	 */
 	public boolean isSunk() {
 		return sunk;
 	}

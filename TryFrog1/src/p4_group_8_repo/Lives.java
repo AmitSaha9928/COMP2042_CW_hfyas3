@@ -8,7 +8,9 @@ import javafx.scene.image.Image;
  */
 public class Lives extends Actor{
     Image lives;
-
+/**
+ * 
+ */
     @Override
     public void act(long now) {
         // TODO Auto-generated method stub
@@ -16,6 +18,7 @@ public class Lives extends Actor{
     }
     /**
      * getting the score pictures for counting lives
+     * @param n
      */
     public Lives(int n) {
         lives = new Image("file:src/p4_group_8_repo/img/"+n+".png", 110, 30, true, true);

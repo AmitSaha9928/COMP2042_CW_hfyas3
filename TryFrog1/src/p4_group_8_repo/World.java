@@ -22,16 +22,22 @@ import javafx.scene.layout.StackPane;
  */
 public abstract class World extends Pane {
     private AnimationTimer timer;
-    
+/**
+ * world   
+ */
     public World() {
     	
     	sceneProperty().addListener(new ChangeListener<Scene>() {
-
+/**
+ * changes
+ */
 			@Override
 			public void changed(ObservableValue<? extends Scene> observable, Scene oldValue, Scene newValue) {
 				if (newValue != null) {
 					newValue.setOnKeyReleased(new EventHandler<KeyEvent>() {
-
+/**
+ * input
+ */
 						@Override
 						public void handle(KeyEvent event) {
 							if(getOnKeyReleased() != null) 
@@ -48,6 +54,9 @@ public abstract class World extends Pane {
 					
 					newValue.setOnKeyPressed(new EventHandler<KeyEvent>() {
 
+/**
+ * input						
+ */
 						@Override
 						public void handle(KeyEvent event) {
 							if(getOnKeyPressed() != null) 
@@ -67,7 +76,9 @@ public abstract class World extends Pane {
     		
 		});
     }
-
+/**
+ * timer
+ */
     public void createTimer() {
         timer = new AnimationTimer() {
             @Override
@@ -82,24 +93,39 @@ public abstract class World extends Pane {
             }
         };
     }
-
+/**
+ * start
+ */
     public void start() {
     	createTimer();
         timer.start();
     }
-
+/**
+ * stop
+ */
     public void stop() {
         timer.stop();
     }
-    
+ /**
+  * add  
+  * @param actor
+  */
     public void add(Actor actor) {
         getChildren().add(actor);
     }
-
+/**
+ * remove
+ * @param actor
+ */
     public void remove(Actor actor) {
         getChildren().remove(actor);
     }
-
+/**
+ * 
+ * @param <A>
+ * @param cls
+ * @return array
+ */
     public <A extends Actor> List<A> getObjects(Class<A> cls) {
         ArrayList<A> someArray = new ArrayList<A>();
         for (Node n: getChildren()) {
@@ -109,6 +135,9 @@ public abstract class World extends Pane {
         }
         return someArray;
     }
-
+/**
+ * 
+ * @param now
+ */
     public abstract void act(long now);
 }

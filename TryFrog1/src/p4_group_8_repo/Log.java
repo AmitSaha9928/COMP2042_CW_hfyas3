@@ -3,14 +3,17 @@ package p4_group_8_repo;
 import javafx.scene.image.Image;
 /**
  * A base class containing the log obstacle details
- * @author POSEIDON
+ * @author Amit Saha
  *
  */
 public class Log extends Actor {
-/**
+/*
  * setting speed parameters for log
  */
 	private double speed;
+/**
+ * speed	
+ */
 	@Override
 	public void act(long now) {
 		move(speed , 0);
@@ -20,8 +23,12 @@ public class Log extends Actor {
 			setX(700);
 	}
 /**
- * 	
  * setting image position
+ * @param imageLink
+ * @param size
+ * @param xpos
+ * @param ypos
+ * @param s
  */
 	public Log(String imageLink, int size, int xpos, int ypos, double s) {
 		setImage(new Image(imageLink, size,size, true, true));
@@ -30,6 +37,10 @@ public class Log extends Actor {
 		speed = s;
 		
 	}
+/**
+ * speed
+ * @return integer
+ */
 	public boolean getLeft() {
 		return speed < 0;
 	}

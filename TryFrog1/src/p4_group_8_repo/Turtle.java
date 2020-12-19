@@ -14,6 +14,9 @@ public class Turtle extends Actor{
 	int i = 1;
 	boolean bool = true;
 	@Override
+/**
+ * turtle
+ */
 	public void act(long now) {
 
 				if (now/900000000  % 3 ==0) {
@@ -37,6 +40,11 @@ public class Turtle extends Actor{
 	}
 /**
  * defining the turtle state images (submerging into water)
+ * @param xpos
+ * @param ypos
+ * @param s
+ * @param w
+ * @param h
  */
 	public Turtle(int xpos, int ypos, int s, int w, int h) {
 		turtle1 = new Image("file:src/p4_group_8_repo/img/TurtleAnimation1.png", w, h, true, true);

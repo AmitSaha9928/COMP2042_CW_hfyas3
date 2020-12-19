@@ -19,7 +19,15 @@ public class Obstacle extends Actor {
 		if (getX() < -50 && speed<0)
 			setX(600);
 	}
-	
+/**
+ * obstacle speed	
+ * @param imageLink
+ * @param xpos
+ * @param ypos
+ * @param s
+ * @param w
+ * @param h
+ */
 	public Obstacle(String imageLink, int xpos, int ypos, int s, int w, int h) {
 		setImage(new Image(imageLink, w,h, true, true));
 		setX(xpos);

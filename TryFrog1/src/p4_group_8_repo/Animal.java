@@ -15,7 +15,7 @@ import javafx.scene.input.KeyEvent;
  */
 public class Animal extends Actor {
 	private static final Lives Lives = null;
-/**
+/*
  * Declaring the variables	
  */
 	Image imgW1;
@@ -43,11 +43,15 @@ public class Animal extends Actor {
 	int dead;
 	double w = 800;
 	ArrayList<End> inter = new ArrayList<End>();
+/**
+ * image link animal
+ * @param imageLink
+ */
 	public Animal(String imageLink) {
 		setImage(new Image(imageLink, imgSize, imgSize, true, true));
 		setX(300);
 		setY(679.8+movement);
-/**
+/*
  * Declaring image paths
  */
 		imgW1 = new Image("file:src/p4_group_8_repo/img/froggerUp.png", imgSize, imgSize, true, true);
@@ -115,6 +119,9 @@ public class Animal extends Actor {
 			}
 		});	
 		setOnKeyReleased(new EventHandler<KeyEvent>() {
+/**
+ *Handles movement of the frog 			
+ */
 			public void handle(KeyEvent event) {
 				if (noMove) {}
 				else {
@@ -148,11 +155,10 @@ public class Animal extends Actor {
 			
 		});
 	}
-	
+/**
+ * Declaring death animations and obstacle parameters	
+ */
 	@Override
-	/**
-	 * Declaring death animations and obstacle parameters
-	 */
 	public void act(long now) {
 		int bounds = 0;
 		if (getY()<0 || getY()>734) {
@@ -166,9 +172,6 @@ public class Animal extends Actor {
 			noMove = true;
 			if ((now)% 11 ==0) {
 				
-				/*for(carD=1; carD<5; carD++) {
-					setImage(new Image("file:src/p4_group_8_repo/img/cardeath"+carD+".png", imgSize, imgSize, true, true));
-				}*/
 				carD++;
 			}
 			if (carD==1) { 
@@ -277,18 +280,31 @@ public class Animal extends Actor {
 			//setY(679.8+movement);
 		}
 	}
+/**
+ * get stop
+ * @return integer
+ */
 	public boolean getStop() {
 		return end==5;
 	}
-	
+/**
+ * get points	
+ * @return points
+ */
 	public int getPoints() {
 		return points;
 	}
-	
+/**
+ * get lives	
+ * @return lives
+ */
 	public int getlives() {
 		return lives;
 	}
-	
+/**
+ * lose lives	
+ * @return boolean 
+ */
 	public boolean loselives() {
 		if(loselives) {
 			lives--;

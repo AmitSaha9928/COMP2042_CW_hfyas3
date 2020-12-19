@@ -9,6 +9,9 @@ import javafx.scene.image.Image;
 public class Menu extends Actor{
 		
 	Image mainmenu; 
+/**
+ * 	
+ */
 	@Override
 		public void act(long now) {
 			

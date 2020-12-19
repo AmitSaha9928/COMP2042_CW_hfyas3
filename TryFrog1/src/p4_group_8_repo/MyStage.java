@@ -12,24 +12,18 @@ import javafx.util.Duration;
  */
 public class MyStage extends World{
 	MediaPlayer mediaPlayer;
+/**
+ * 	
+ */
 	@Override
 	public void act(long now) {
 		
 	}
-	
+	/**
+	 * 
+	 */
 	public MyStage() {
 		
-//		mediaPlayer.play();
-//		mediaPlayer.setOnEndOfMedia(new Runnable() {
-//
-//			@Override
-//			public void run() {
-//				mediaPlayer.seek(Duration.ZERO);
-//				
-//			}
-//			
-//		});
-//		mediaPlayer.play();
 	}
 /**
  * defining music source and playing it on loop
